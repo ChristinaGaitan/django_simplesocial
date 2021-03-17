@@ -9,3 +9,9 @@ pip install django-bootstrap3
 ```
 pip install misaka
 ```
+
+## To install braces
+
+```
+pip install django-braces
+```
