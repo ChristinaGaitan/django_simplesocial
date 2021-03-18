@@ -11,6 +11,7 @@ from . import models
 from . import forms
 
 from django.contrib.auth import get_user_model
+from django.contrib import messages
 # current_user
 User = get_user_model()
 
@@ -22,7 +23,7 @@ class PostList(SelectRelatedMixin, generic.ListView):
 
 class UserPosts(generic.ListView):
   model = models.Post
-  template_name = 'post/user_post_list.html'
+  template_name = 'posts/user_post_list.html'
 
   def get_queryset(self):
     try:
@@ -59,7 +60,7 @@ class CreatePost(LoginRequiredMixin, SelectRelatedMixin, generic.CreateView):
 class DeletePost(LoginRequiredMixin, SelectRelatedMixin, generic.DeleteView):
   model = models.Post
   select_related = ('user', 'group')
-  success_url = reverse_lazy('post:all')
+  success_url = reverse_lazy('posts:all')
 
   def get_queryset(self):
     queryset = super().get_queryset()

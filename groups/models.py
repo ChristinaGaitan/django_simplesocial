@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
-from django.urls import reverse
+from django.urls.base import reverse
+# from django.urls import reverse
 
 # Create your models here.
 import misaka
@@ -42,4 +43,3 @@ class GroupMember(models.Model):
 
   class Meta:
     unique_together = ('group', 'user')
-
