@@ -13,7 +13,7 @@
 
     <input type='submit' class='btn btn-danger btn-large' value='Confirm Delete'>
 
-    <a class='btn btn-simple btn-large btn-default' href="{% url 'post:single' username=user.username pk=object.pk %}">
+    <a class='btn btn-simple btn-large btn-default' href="{% url 'posts:single' username=user.username pk=object.pk %}">
       Cancel
     </a>
 

@@ -13,7 +13,7 @@
         </span>
       </a>
     {% else %}
-      <a href="{% url 'groups:leave' slug=group.slug %}" class='btn btn-lg btn-fill btn-warning'>
+      <a href="{% url 'groups:join' slug=group.slug %}" class='btn btn-lg btn-fill btn-warning'>
         <span class='glyphicon glyphicon-ok-circle'>
           Join
         </span>
@@ -25,7 +25,7 @@
 
 {% block group_content %}
   <div class='col-md-8'>
-    {% if groups.posts.count == 0 %}
+    {% if group.posts.count == 0 %}
       <h2>No posts in this group yet!</h2>
     {% else %}
       {% for post in groups.posts.all %}
